@@ -24,6 +24,7 @@ USE_CAMERA_STUB := true
 
 TARGET_KERNEL_CONFIG := opensemc_fuji_hikari_row_defconfig
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := cortex-a8/bin/arm-eabi-
+TARGET_USE_O3 := true
 
 # Sony-supplied broadcom wlan module
 BOARD_WLAN_BROADCOM := true
