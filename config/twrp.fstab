@@ -7,4 +7,4 @@
 /sdcard		vfat		/dev/block/mmcblk0p15
 /external_sd		vfat		/dev/block/mmcblk1p1
 # zRAM
-/dev/block/zram0	none	swap	defaults	zramsize=67108864
+/dev/block/zram0	none	swap	defaults	zramsize=134217728
