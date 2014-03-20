@@ -10,3 +10,9 @@ ro.sf.lcd_density=320
 
 # HDMI
 ro.hdmi.enable=true
+
+# USB DEBUGGING
+ro.secure=0
+ro.debuggable=1
+persist.service.adb.enable=1
+persist.sys.usb.config=mtp,adb
