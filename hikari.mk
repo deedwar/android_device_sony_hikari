@@ -59,6 +59,12 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
+# F2FS Filesystem tools
+PRODUCT_PACKAGES += \
+	mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs
+
 # TWRP
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/twrp.fstab:recovery/root/etc/twrp.fstab
