@@ -1,2 +1,1 @@
-add_lunch_combo cm_hikari-eng
-add_lunch_combo cm_hikari-userdebug
+add_lunch_combo pa_hikari-userdebug
