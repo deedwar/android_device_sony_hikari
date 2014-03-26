@@ -15,7 +15,7 @@
 #
 
 # define build target(normal/native/loop)
-BUILD_TARGET := native
+BUILD_TARGET := normal
 
 # overlay
 DEVICE_PACKAGE_OVERLAYS += device/sony/nozomi/overlay
