@@ -28,6 +28,10 @@ TARGET_CPU_VARIANT := krait
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 
+# kernel
+TARGET_KERNEL_SOURCE := kernel/nozomi
+TARGET_KERNEL_CONFIG := fuji_hikari_row_defconfig
+
 # compile flag
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
@@ -83,8 +87,27 @@ TARGET_BOARD_PLATFORM := msm8660
 TARGET_BOOTLOADER_BOARD_NAME := fuji
 
 TARGET_NO_BOOTLOADER := true
-TARGET_NO_RECOVERY := true
-TARGET_BOOTLOADER_TYPE := fastboot
+#TARGET_NO_RECOVERY := true
+#TARGET_BOOTLOADER_TYPE := fastboot
+
+# Partition information
+BOARD_VOLD_MAX_PARTITIONS := 16
+
+# the following two sizes are generous guesses
+# since these partitions are not visible
+BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01400000
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01400000
+
+# Recovery
+TARGET_RECOVERY_INITRC := device/sony/hikari/recovery/init.rc
+RECOVERY_FSTAB_VERSION := 2
+TARGET_RECOVERY_FSTAB := device/sony/hikari/recovery/fstab.semc
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1056964608
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 2147483648
+BOARD_FLASH_BLOCK_SIZE := 131072
+
+BOARD_HAS_NO_SELECT_BUTTON := true
+TARGET_USERIMAGES_USE_EXT4 := true
 
 # image
 TARGET_USERIMAGES_USE_EXT4 := true

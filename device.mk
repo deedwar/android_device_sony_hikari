@@ -28,8 +28,21 @@ PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # kernel
+LOCAL_KERNEL := device/sony/hikari/kernel
+PRODUCT_COPY_FILES := \
+	$(LOCAL_KERNEL):kernel
+
+# Extract recovery ramdisks
 PRODUCT_PACKAGES += \
-    kernel
+    extract_elf_ramdisk
+
+# Device specific part for two-stage boot
+PRODUCT_COPY_FILES += \
+   $(LOCAL_PATH)/recovery/bootrec-device:recovery/bootrec-device
+
+# TWRP
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/config/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Light
 PRODUCT_PACKAGES += \
@@ -161,22 +174,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/init.sony.rc:root/init.sony.rc \
     $(LOCAL_PATH)/config/ueventd.semc.rc:root/ueventd.semc.rc
 
-# Normal/Native/Loop
-ifeq ($(BUILD_TARGET),native)
-    PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/config/fstab.semc:root/fstab.semc \
-        $(LOCAL_PATH)/config/init.sony-platform.native.rc:root/init.sony-platform.rc
-else ifeq ($(BUILD_TARGET),loop)
-    PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/config/fstab.loop.semc:root/fstab.semc \
-        $(LOCAL_PATH)/config/init.sony-platform.loop.rc:root/init.sony-platform.rc
-    PRODUCT_PACKAGES += \
-        losetup-static
-else
-    PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/config/fstab.semc:root/fstab.semc \
-        $(LOCAL_PATH)/config/init.sony-platform.rc:root/init.sony-platform.rc
-endif
+# Normal
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/config/fstab.semc:root/fstab.semc \
+	$(LOCAL_PATH)/config/init.sony-platform.rc:root/init.sony-platform.rc
+
 
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \

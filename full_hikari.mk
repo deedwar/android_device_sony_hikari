@@ -33,7 +33,10 @@ PRODUCT_BRAND := Sony
 PRODUCT_MODEL := Xperia acro S
 PRODUCT_MANUFACTURER := Sony
 PRODUCT_RESTRICT_VENDOR_FILES := false
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=LT26w_1266-3204 BUILD_FINGERPRINT=SEMC/LT26w_1266-3204/LT26w:4.0.4/6.1.A.2.50/zfd_zw:user/release-keys PRIVATE_BUILD_DESC="LT26w-user 4.0.4 6.1.A.2.50 zfd_zw test-keys"
 
+# Inherit from costum vendor
+$(call inherit-product, vendor/deedwar/config/common.mk)
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/sony/hikari/device.mk)
 $(call inherit-product-if-exists, vendor/sony/hikari/device-vendor.mk)
