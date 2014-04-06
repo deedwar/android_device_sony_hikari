@@ -24,8 +24,7 @@ DEVICE_PACKAGE_OVERLAYS += device/sony/hikari/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-PRODUCT_COPY_FILES := \
- 	$(LOCAL_PATH)kernel:kernel
+
 
 # Extract recovery ramdisks
 PRODUCT_PACKAGES += \
@@ -34,11 +33,8 @@ PRODUCT_PACKAGES += \
 # Post recovery script
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
-    $(LOCAL_PATH)/recovery/rebootrecovery.sh:recovery/root/sbin/rebootrecovery.sh
-
-# Device specific part for two-stage boot
-PRODUCT_COPY_FILES += \
-   device/hikari/recovery/bootrec-device:recovery/bootrec-device
+    $(LOCAL_PATH)/recovery/rebootrecovery.sh:recovery/root/sbin/rebootrecovery.sh \
+	$(LOCAL_PATH)/recovery/bootrec-device:recovery/bootrec-device
 
 # Light
 PRODUCT_PACKAGES += \
@@ -215,7 +211,7 @@ PRODUCT_COPY_FILES += \
 
 # Boot Logo
 PRODUCT_COPY_FILES += \
-     device/sony/hikari/bootlogo/sony.rle:root/logo.rle
+    $(LOCAL_PATH)/bootlogo/sony.rle:root/logo.rle
 
 # Recovery
 PRODUCT_COPY_FILES += \
