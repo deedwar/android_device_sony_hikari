@@ -27,9 +27,10 @@ DEVICE_PACKAGE_OVERLAYS += device/sony/hikari/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-# kernel
-#PRODUCT_PACKAGES += \
-#    kernel
+LOCAL_KERNEL := device/sony/hikari/kernel
+
+PRODUCT_COPY_FILES := \
+	$(LOCAL_KERNEL):kernel
 
 # Post recovery script
 PRODUCT_COPY_FILES += \

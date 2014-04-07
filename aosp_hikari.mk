@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 $(call inherit-product, device/sony/hikari/full_hikari.mk)
-$(call inherit-product, vendor/sony/extra/config/common.mk)
+#$(call inherit-product, vendor/sony/extra/config/common.mk)
 
 
 PRODUCT_NAME := aosp_hikari

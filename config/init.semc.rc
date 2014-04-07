@@ -46,6 +46,14 @@ on init
     symlink /storage/usbdisk /usbdisk
     symlink /storage/usbdisk /mnt/usbdisk
 
+	# secondary external storage
+    mkdir /storage/sdcard1 0700 root root
+    symlink /storage/sdcard1 /sdcard1
+    symlink /storage/sdcard1 /ext_card
+    export SECONDARY_STORAGE /storage/sdcard1
+    symlink /storage/sdcard1 /storage/removable/sdcard1
+
+
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
