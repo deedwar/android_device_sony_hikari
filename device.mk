@@ -184,7 +184,7 @@ else ifeq ($(BUILD_TARGET),loop)
         losetup-static
 else
     PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/config/fstab.semc:root/fstab.semc \
+        $(LOCAL_PATH)/recovery/fstab.semc:root/fstab.semc \
         $(LOCAL_PATH)/config/init.sony-platform.rc:root/init.sony-platform.rc
 endif
 
