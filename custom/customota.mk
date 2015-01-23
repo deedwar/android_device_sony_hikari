@@ -40,7 +40,7 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS)
 	   -k $(KEY_CERT_PAIR) \
 	   --no_separate_recovery=true \
 	   --multiple_boot=$(MULTI_BOOT) \
-	   --multiple_boot_scripts=device/sony/nozomi/custom \
+	   --multiple_boot_scripts=device/sony/hikari/custom \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 endif
 

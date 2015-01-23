@@ -26,7 +26,7 @@ BUILD_FS := dynamic
 endif
 
 # overlay
-DEVICE_PACKAGE_OVERLAYS += device/sony/nozomi/overlay
+DEVICE_PACKAGE_OVERLAYS += device/sony/hikari/overlay
 
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
