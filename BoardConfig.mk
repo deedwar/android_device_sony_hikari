@@ -90,10 +90,10 @@ KERNEL_DEFCONFIG := fuji_hikari_defconfig
 
 ifeq ($(TARGET_NO_MULTIKERNEL),false)
 BOARD_KERNEL_MSM_OC := true
-KERNEL_DEFCONFIG_OC := fuji_hikari_defconfig
+KERNEL_DEFCONFIG_OC := fuji_hikari_oc_defconfig
 
 BOARD_KERNEL_MSM_OC_ULTRA := true
-KERNEL_DEFCONFIG_OC_ULTRA := fuji_hikari_defconfig
+KERNEL_DEFCONFIG_OC_ULTRA := fuji_hikari_oc_ultra_defconfig
 endif
 
 # board
